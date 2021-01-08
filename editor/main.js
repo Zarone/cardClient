@@ -40,7 +40,7 @@ const dataPoints = {
 
 let newCard;
 // const fetchURL = 'http://localhost:3000/'
-const fetchURL = 'https://fast-scrubland-61023.herokuapp.com/'
+const fetchURL = 'https://agile-eyrie-40238.herokuapp.com/'
 
 function hide(){
   editBack.hidden = true;
@@ -71,7 +71,9 @@ async function getImages(target) {
       }
     })
   }
-  
+  console.log(cards)
+  // cards = cards.json()
+  // console.log(cards)
   return cards.json();
 }
 
