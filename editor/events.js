@@ -50,7 +50,7 @@ saveEdit.addEventListener('click', async ()=>{
     body: JSON.stringify({key: valKey.value.toString()})
   })
   validate = await validate.json()
-  if (validate['Correct']){}
+  if (validate['Correct']){
     imageDiv.innerHTML = '';
     loading.hidden = false;
     if (newCard == false){
