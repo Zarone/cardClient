@@ -39,6 +39,8 @@ const dataPoints = {
 }
 
 let newCard;
+let preload = [];
+let openingLoad = 100;
 // const fetchURL = 'http://localhost:3000/'
 const fetchURL = 'https://agile-eyrie-40238.herokuapp.com/'
 

@@ -1,17 +1,25 @@
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+
   imageDiv.innerHTML = '';
   loading.hidden = false;
   let images;
   try {
     images = await getImages(searchBox.value);
     if (images.length > 0){
-      let loadCounter = Math.min(images.length, 100);
+      let loadCounter = Math.min(images.length, openingLoad);
       for (let i = 0; i < loadCounter; i++){
         let img = document.createElement('IMG');
-        img.src = images[i]['URL'];
+        
+        if (images[i]['URL'] == 'https://drive.google.com/uc?export=view&id=' || images[i]['URL'] == ''){
+          img.src = "./editor/images/Background-01.jpg"
+        } else {
+          img.src = images[i]['URL'];
+        }
+
         img.alt = images[i]['Name']
         img.classList.add('cardImage')
+        img.classList.add('lazy-load')
         img.addEventListener('click', ()=>{
           newCard = false;
           editCard(img.src, img.alt);
@@ -30,7 +38,6 @@ form.addEventListener('submit', async (e) => {
   }
   
   loading.hidden = true;
-
 })
 
 saveEdit.addEventListener('click', async ()=>{
@@ -63,7 +70,7 @@ saveEdit.addEventListener('click', async ()=>{
     try {
       images = await getImages(searchBox.value);
       if (images.length > 0){
-        let loadCounter = Math.min(images.length, 100);
+        let loadCounter = Math.min(images.length, openingLoad);
         for (let i = 0; i < loadCounter; i++){
           let img = document.createElement('IMG');
           img.src = images[i]['URL'];
