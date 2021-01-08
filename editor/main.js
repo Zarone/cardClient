@@ -84,7 +84,7 @@ async function editCard(id, name) {
   
   let cardInfo;
   try {
-    cardInfo = await fetch(fetchURL + "/Name/"+name, {
+    cardInfo = await fetch(fetchURL + "Name/"+name, {
       method: 'GET',
       mode: 'cors',
       headers: {
