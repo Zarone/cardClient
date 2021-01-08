@@ -19,7 +19,6 @@ form.addEventListener('submit', async (e) => {
 
         img.alt = images[i]['Name']
         img.classList.add('cardImage')
-        img.classList.add('lazy-load')
         img.addEventListener('click', ()=>{
           newCard = false;
           editCard(img.src, img.alt);
