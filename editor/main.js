@@ -23,7 +23,8 @@ const editBack = document.getElementById('editBack');
 const editMenu = document.getElementById('editMenu');
 const selectedCardImage = document.getElementById('selectedCardImage');
 const saveEdit = document.getElementById('saveEdit');
-const createCard = document.getElementById('createCard')
+const createCard = document.getElementById('createCard');
+const valKey = document.getElementById('password')
 
 const dataPoints = {
   name: document.getElementById('simpleMenu0'),
