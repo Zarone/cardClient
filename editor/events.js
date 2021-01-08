@@ -41,7 +41,7 @@ form.addEventListener('submit', async (e) => {
 
 saveEdit.addEventListener('click', async ()=>{
   let validate = await fetch(fetchURL+'/validation', {
-    method: 'GET',
+    method: 'POST',
     mode: 'cors',
     headers: {
       'Content-Type': 'application/json'
@@ -49,7 +49,8 @@ saveEdit.addEventListener('click', async ()=>{
     body: JSON.stringify({key: valKey.value.toString()})
   })
   validate = await validate.json()
-  if (validate['Correct']){
+  console.log(validate)
+  if (validate['Correct'] == true){
     imageDiv.innerHTML = '';
     loading.hidden = false;
     if (newCard == false){
