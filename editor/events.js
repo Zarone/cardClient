@@ -128,7 +128,7 @@ saveEdit.addEventListener('click', async ()=>{
 createCard.addEventListener('click', async(e)=>{
   e.preventDefault();
   show();
-  selectedCardImage.src = "./editor/images/Background.jpg"
+  selectedCardImage.src = "./editor/images/Background-01.jpg"
   newCard = true;
   
   dataPoints.name.value = '';
