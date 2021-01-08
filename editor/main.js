@@ -71,9 +71,6 @@ async function getImages(target) {
       }
     })
   }
-  console.log(cards)
-  // cards = cards.json()
-  // console.log(cards)
   return cards.json();
 }
 
