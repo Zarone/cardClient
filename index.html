@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Edit Demo</title>
+  <link rel="stylesheet" href="./editor/style.css">
+</head>
+<body>
+  
+  <div class='searchContainer'>
+    <form id='searchContainer' >
+      <input id='searchBox' type="text" class='mainSearch'  />
+    </form>
+    <button id='createCard' class='createCard'>Create</button>
+  </div>
+
+  <div id='loading' class='imageHolder' hidden>
+    <img class='loadingImage' src="./editor/images/loading.gif" alt="loading..." >
+  </div>
+
+
+  <div id='imageDiv' class='imageDiv'>
+    
+  </div>
+
+  <div id='editBack' class='editBack' onclick='hide()' hidden>
+
+  </div>
+  <div id='editMenu' class='editMenu' hidden>
+    <div class='editButtonContainer'>
+      <button id='saveEdit' class='editButton'>Save</button>
+      <button class='editButton' onclick='hide()'>Close</button>
+    </div>
+    <form class='editForm'>
+      <input id='simpleMenu0' class='simpleMenu0' placeholder="Name" >
+      <p class='simpleMenu0'>Name:</p>
+      <input id='simpleMenu1' class='simpleMenu1' placeholder="Type">
+      <p class='simpleMenu1'>Type:</p>
+      <input id='simpleMenu2' class='simpleMenu2' placeholder="Subtype">
+      <p class='simpleMenu2'>Subtype:</p>
+      <input id='simpleMenu3' class='simpleMenu3' placeholder="Cost" type='number'>
+      <p class='simpleMenu3'>Cost:</p>
+      <input id='simpleMenu4' class='simpleMenu4' placeholder="Power" type='number'>
+      <p class='simpleMenu4'>Power:</p>
+      <input id='simpleMenu5' class='simpleMenu5' placeholder="Aether/Industrial">
+      <p class='simpleMenu5'>Power Type:</p>
+      <input id='simpleMenu6' class='simpleMenu6' placeholder="Level">
+      <p class='simpleMenu6'>Level:</p>
+      <textarea id='effectText' placeholder='Card Effect' class='effectText' data-role="none" cols="1" rows="1"></textarea>
+      <p class='effectText'>Effect Type:</p>
+      <input id='effectType' placeholder="Effect Type" class='effectType'>
+      <p class='effectType'>Effect:</p>
+    </form>
+    <img id="selectedCardImage" class="selectedCardImage" alt="Selected Card Image">
+    <input class='urlSelect' id='urlSelect' type='url' placeholder="url" />
+  </div>
+
+  <script src='./editor/main.js'></script>
+  <script src='./editor/events.js'></script>
+
+</body>
+</html>
