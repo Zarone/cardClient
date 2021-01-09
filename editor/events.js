@@ -50,7 +50,6 @@ saveEdit.addEventListener('click', async ()=>{
     body: JSON.stringify({key: valKey.value.toString()})
   })
   validate = await validate.json()
-  console.log(validate)
   if (validate['Correct'] == true){
     imageDiv.innerHTML = '';
     loading.hidden = false;

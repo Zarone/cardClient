@@ -17,11 +17,9 @@ body{
 
 .mainSearch {
   height: 5vh;
-  width: 18rem;
+  width: 80%;
   font-size: 2rem;
 }
-
-
 
 .createCard{
   height: 5vh;
@@ -54,7 +52,8 @@ body{
 }
 
 .cardImage {
-  width: 20vw;
+  width: 182px;
+  height: 254px;
   border-radius: 3%;
   margin: 1%;
 }
@@ -209,7 +208,6 @@ input.simpleMenu3, input.simpleMenu4, input.simpleMenu5, input.simpleMenu6{
 
 p.effectText, p.effectType, p.simpleMenu0, p.simpleMenu1, p.simpleMenu2, p.simpleMenu3, p.simpleMenu4, p.simpleMenu5, p.simpleMenu6{
   position: absolute;
-  /* border: 0.05rem solid black; */
   border-radius: 0.1rem;
   text-align: start;
   margin: 1px 2px;
