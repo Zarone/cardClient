@@ -40,7 +40,7 @@ form.addEventListener('submit', async (e) => {
 })
 
 saveEdit.addEventListener('click', async ()=>{
-  let validate = await fetch(fetchURL+'/validation', {
+  let validate = await fetch(fetchURL+'validation', {
     method: 'POST',
     mode: 'cors',
     headers: {
