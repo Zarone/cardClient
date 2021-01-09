@@ -18,10 +18,11 @@ form.addEventListener('submit', async (e) => {
         }
 
         img.alt = images[i]['Name']
+        img.id = images[i]['Level']
         img.classList.add('cardImage')
         img.addEventListener('click', ()=>{
           newCard = false;
-          editCard(img.src, img.alt);
+          editCard(img.src, img.alt, img.id);
         })
         imageDiv.appendChild(img);
       }

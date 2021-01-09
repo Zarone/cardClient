@@ -77,14 +77,14 @@ async function getImages(target) {
   return cards.json();
 }
 
-async function editCard(id, name) {
+async function editCard(id, name, level) {
   editBack.hidden = false;
   editMenu.hidden = false;
   selectedCardImage.src = id;
   
   let cardInfo;
   try {
-    cardInfo = await fetch(fetchURL + "Name/"+name, {
+    cardInfo = await fetch(fetchURL + "Name/"+name+'/'+level.toString(), {
       method: 'GET',
       mode: 'cors',
       headers: {
