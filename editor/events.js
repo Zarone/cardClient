@@ -77,6 +77,7 @@ saveEdit.addEventListener('click', async ()=>{
         body: JSON.stringify(newObject)
       })
 
+      let images;
       try {
         images = await getImages(searchBox.value);
         if (images.length > 0){
