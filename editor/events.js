@@ -84,12 +84,21 @@ saveEdit.addEventListener('click', async ()=>{
           let loadCounter = Math.min(images.length, openingLoad);
           for (let i = 0; i < loadCounter; i++){
             let img = document.createElement('IMG');
-            img.src = images[i]['URL'];
+
+            if (images[i]['URL'] == 'https://drive.google.com/uc?export=view&id=' || images[i]['URL'] == ''){
+              img.src = "./editor/images/Background-01.jpg"
+            } else {
+              img.src = images[i]['URL'];
+            }
+
             img.alt = images[i]['Name']
+            img.id = images[i]['Level']
             img.classList.add('cardImage')
             img.addEventListener('click', ()=>{
-              editCard(img.src, img.alt);
+              newCard = false;
+              editCard(img.src, img.alt, img.id);
             })
+
             imageDiv.appendChild(img);
           }
         } else {

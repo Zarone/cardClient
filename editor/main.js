@@ -78,6 +78,7 @@ async function getImages(target) {
 }
 
 async function editCard(id, name, level) {
+  console.log(fetchURL + "Name/"+name+'/'+level.toString())
   editBack.hidden = false;
   editMenu.hidden = false;
   selectedCardImage.src = id;
