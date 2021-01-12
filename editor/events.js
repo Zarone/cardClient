@@ -128,6 +128,7 @@ saveEdit.addEventListener('click', async ()=>{
             Power: dataPoints["power"].value.toString(),
             PowerType: dataPoints["powerType"].value.toString(),
             Level: dataPoints["level"].value.toString(),
+            Health: dataPoints['health'].value.toString(),
             EffectType: dataPoints["effectType"].value.toString(),
             Effect: dataPoints["cardEffect"].value.toString(),
             URL: dataPoints["url"].value.toString()
@@ -168,6 +169,7 @@ createCard.addEventListener('click', async(e)=>{
   dataPoints.effectType.value = '';
   dataPoints.cardEffect.value = '';
   dataPoints.url.value = '';
+  dataPoints.health.value = '';
 
 })
 

@@ -1,20 +1,3 @@
-const options = JSON.stringify({
-  Type: 'Character', 
-  // possible: Action, Event, Character
-  SubType: 'Special Character', 
-  //possible: Action: Location - Unity, Location, Perpetual - Unity, Perpetual, Action - Unity, Action
-  //possible: Event: Normal, Climax
-  //possible: Character: Special Character - Unleashed, Special Character, Basic Character
-  Cost: 10,
-  Effect: '',
-  EffectType: 'Activate',
-  Level: 3,
-  Name: 'The Architect',
-  URL: 'C:/Users/Zachary Alfano/Desktop/Games/Guardians/Cards/The Architect Level 3-01.jpg',
-  Power: "8",
-  PowerType: "Aether"
-})
-
 const form = document.getElementById('searchContainer');
 const searchBox = document.getElementById('searchBox');
 const loading = document.getElementById('loading');
@@ -34,6 +17,7 @@ const dataPoints = {
   power: document.getElementById('simpleMenu4'),
   powerType: document.getElementById('simpleMenu5'),
   level: document.getElementById('simpleMenu6'),
+  health: document.getElementById('simpleMenu7'),
   effectType: document.getElementById('effectType'),
   cardEffect: document.getElementById('effectText'),
   url: document.getElementById('urlSelect')
@@ -104,6 +88,7 @@ async function editCard(id, name, level) {
   dataPoints.power.value = cardInfo[0]['Power'];
   dataPoints.powerType.value = cardInfo[0]['PowerType'];
   dataPoints.level.value = cardInfo[0]['Level'];
+  dataPoints.health.value = cardInfo[0]['Health'];
   dataPoints.effectType.value = cardInfo[0]['EffectType'];
   dataPoints.cardEffect.value = cardInfo[0]['Effect'];
   dataPoints.url.value = cardInfo[0]['URL'];

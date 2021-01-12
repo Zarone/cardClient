@@ -157,7 +157,7 @@ body{
 }
 
 textarea.effectText, input.effectType, input.simpleMenu0, input.simpleMenu1, input.simpleMenu2, 
-input.simpleMenu3, input.simpleMenu4, input.simpleMenu5, input.simpleMenu6{
+input.simpleMenu3, input.simpleMenu4, input.simpleMenu5, input.simpleMenu6, input.simpleMenu7{
   position: absolute;
   width: 80%;
   border: 0.05rem solid black;
@@ -206,7 +206,11 @@ input.simpleMenu3, input.simpleMenu4, input.simpleMenu5, input.simpleMenu6{
   top: 31%;
 }
 
-p.effectText, p.effectType, p.simpleMenu0, p.simpleMenu1, p.simpleMenu2, p.simpleMenu3, p.simpleMenu4, p.simpleMenu5, p.simpleMenu6{
+.simpleMenu7{
+  top: 36%;
+}
+
+p.effectText, p.effectType, p.simpleMenu0, p.simpleMenu1, p.simpleMenu2, p.simpleMenu3, p.simpleMenu4, p.simpleMenu5, p.simpleMenu6, p.simpleMenu7{
   position: absolute;
   border-radius: 0.1rem;
   text-align: start;
