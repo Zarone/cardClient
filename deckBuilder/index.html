@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id='collection' class='collectionContainer'>
+    <form id='form'>
+      <input id='mainSearch' class='mainSearch' type="text">
+    </form>
+
+    <div class='searchContainer' id='imageDiv'>
+      <img id='loadingImage' class='loadingImage' src="./images/loading.gif" alt="loading..." hidden>
+    </div>
+
+  </div>
+  <div id='divider' class='divider'></div>
+  <div id='deckContainer' class='deckContainer'>
+    <button onclick='useCards(deck)' class='saveButton'>Save</button>
+    <div class='cardsContainer' id='characters'></div>
+    <div class='cardsContainer' id='events'></div>
+    <div class='cardsContainer' id='actions'></div>
+  </div>
+  <canvas id="myCanvas" width="7450" height="7280"></canvas>
+  <script src='main.js'></script>
+  <script src="saveHandler.js"></script>
+  <script src='events.js'></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body{
+  height: 100vh;
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.divider{
+  width: 1%;
+  background-color: black;
+  margin: 0;
+}
+
+.deckContainer, .collectionContainer{
+  width: 49.5%;
+  height: 100vh;
+  margin: 0;
+}
+
+#myCanvas{
+  display: none;
+  width: 100%;
+}
+
+/* Deck */
+
+.deckContainer{
+  overflow: scroll;
+  text-align: center;
+}
+
+.cardsContainer{
+  border: 2px solid black;
+}
+
+.cardsContainer img{
+  width: 93px;
+  height: 130px;
+}
+
+.saveButton{
+  margin: 10px;
+}
+
+/* Collection */
+
+.collectionContainer{
+  text-align: center;
+  height: 90vh;
+}
+
+.cardImage {
+  width: 186px;
+  height: 260px;
+  border-radius: 3%;
+  margin: 1%;
+}
+
+.cardImage:hover{
+  transform: rotate(3deg) scale(1.1);
+}
+
+.searchContainer {
+  padding-top: 3vh;
+  text-align: center;
+  height: 100%;
+  overflow: scroll;
+}
+
+.mainSearch {
+  height: 5vh;
+  width: 80%;
+  font-size: 2rem;
+}
+
+.loadingImage{
+  width: 100%;
+}
