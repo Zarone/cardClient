@@ -92,5 +92,4 @@ async function editCard(id, name, level) {
   dataPoints.effectType.value = cardInfo[0]['EffectType'];
   dataPoints.cardEffect.value = cardInfo[0]['Effect'];
   dataPoints.url.value = cardInfo[0]['URL'];
-
 }

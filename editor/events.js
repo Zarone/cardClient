@@ -168,7 +168,7 @@ createCard.addEventListener('click', async(e)=>{
   dataPoints.level.value = 0;
   dataPoints.effectType.value = '';
   dataPoints.cardEffect.value = '';
-  dataPoints.url.value = '';
+  dataPoints.url.value = 'https://drive.google.com/uc?export=view&id=';
   dataPoints.health.value = '';
 
 })
