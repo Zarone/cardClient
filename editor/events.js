@@ -81,7 +81,7 @@ saveEdit.addEventListener('click', async ()=>{
       try {
         images = await getImages(searchBox.value);
         if (images.length > 0){
-          let loadCounter = Math.min(images.length, openingLoad);
+          let loadCounter = images.length;
           for (let i = 0; i < loadCounter; i++){
             let img = document.createElement('IMG');
 
