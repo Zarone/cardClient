@@ -1,5 +1,6 @@
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  preload = [];
 
   imageDiv.innerHTML = '';
   loading.hidden = false;

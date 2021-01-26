@@ -3,7 +3,7 @@ let deck = [];
 const search = document.getElementById('form')
 const fetchURL = 'https://agile-eyrie-40238.herokuapp.com/';
 const imageDiv = document.getElementById('imageDiv');
-const loading = document.getElementById('loadingImage')
+let loadingImage; // stores the updating location of loading image
 const searchBox = document.getElementById('mainSearch')
 
 const deckDiv = document.getElementById('deckContainer')
@@ -12,6 +12,8 @@ const cardsDiv = {
   Character: document.getElementById('characters'),
   Event: document.getElementById('events')
 }
+
+let preload = [];
 
 async function getImages(target) {
   let cards;
@@ -51,11 +53,6 @@ function renderDeck(){
     img.src = card.src;
     img.alt = card.type;
     img.addEventListener('click', ()=>{
-      // deck.forEach(e=>{
-      //   if (e.type == img.alt){
-
-      //   }
-      // })
       let index = deck.map(function(e) { return e.src; }).indexOf(img.src);
       if (index == -1) console.error('index not found')
       deck.splice(index, 1)
@@ -63,4 +60,14 @@ function renderDeck(){
     })
     cardsDiv[card.type].appendChild(img);
   })
+}
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  console.log(rect)
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+  );
 }
