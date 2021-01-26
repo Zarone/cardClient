@@ -1,6 +1,7 @@
 const form = document.getElementById('searchContainer');
 const searchBox = document.getElementById('searchBox');
 const loading = document.getElementById('loading');
+const loadingImage = document.getElementById('loadingImage')
 const imageDiv = document.getElementById('imageDiv');
 const editBack = document.getElementById('editBack');
 const editMenu = document.getElementById('editMenu');
@@ -61,7 +62,6 @@ async function getImages(target) {
 }
 
 async function editCard(id, name, level) {
-  console.log(fetchURL + "Name/"+name+'/'+level.toString())
   editBack.hidden = false;
   editMenu.hidden = false;
   selectedCardImage.src = id;
@@ -91,4 +91,13 @@ async function editCard(id, name, level) {
   dataPoints.effectType.value = cardInfo[0]['EffectType'];
   dataPoints.cardEffect.value = cardInfo[0]['Effect'];
   dataPoints.url.value = cardInfo[0]['URL'];
+}
+
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight)
+  );
 }

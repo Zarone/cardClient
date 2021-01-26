@@ -7,8 +7,8 @@ form.addEventListener('submit', async (e) => {
   try {
     images = await getImages(searchBox.value);
     if (images.length > 0){
-      let loadCounter = images.length;
-      for (let i = 0; i < loadCounter; i++){
+      let i = 0;
+      while (i < images.length){
         let img = document.createElement('IMG');
         
         if (images[i]['URL'] == 'https://drive.google.com/uc?export=view&id=' || images[i]['URL'] == ''){
@@ -25,6 +25,15 @@ form.addEventListener('submit', async (e) => {
           editCard(img.src, img.alt, img.id);
         })
         imageDiv.appendChild(img);
+        i++;
+        if (!isInViewport(loadingImage)){
+          break;
+        }
+      }
+      if (i < images.length){
+        for (let j = i; j < images.length; j++){
+          preload.push(images[j])
+        }
       }
     } else {
       let p = document.createElement('P');
@@ -36,7 +45,7 @@ form.addEventListener('submit', async (e) => {
     p.innerText = err;
     imageDiv.appendChild(p);
   }
-  
+
   loading.hidden = true;
 })
 
@@ -52,6 +61,7 @@ saveEdit.addEventListener('click', async ()=>{
   validate = await validate.json()
   if (validate['Correct'] == true){
     imageDiv.innerHTML = '';
+    console.log('unhide')
     loading.hidden = false;
     if (newCard == false){
       let newObject = {
@@ -172,5 +182,35 @@ createCard.addEventListener('click', async(e)=>{
   dataPoints.url.value = 'https://drive.google.com/uc?export=view&id=';
   dataPoints.health.value = '';
 
+})
+
+document.addEventListener("scroll", ()=>{
+  if (preload.length > 0 && isInViewport(loadingImage) && loading.hidden == true){
+    loading.hidden = false;
+    let i;
+    for (i = 0; i < preload.length && preload.length > 0; i++){
+      let img = document.createElement('IMG');
+        
+      if (preload[0]['URL'] == 'https://drive.google.com/uc?export=view&id=' || preload[0]['URL'] == ''){
+        img.src = "./editor/images/Background-01.jpg"
+      } else {
+        img.src = preload[0]['URL'];
+      }
+
+      img.alt = preload[0]['Name']
+      img.id = preload[0]['Level']
+      img.classList.add('cardImage')
+      img.addEventListener('click', ()=>{
+        newCard = false;
+        editCard(img.src, img.alt, img.id);
+      })
+      imageDiv.appendChild(img);
+      preload.shift()
+      if (!isInViewport(loadingImage)){
+        break;
+      }
+    }
+    loading.hidden = true;
+  }
 })
 
